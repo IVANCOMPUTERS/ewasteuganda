@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Waste Uganda</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>E-Waste Uganda</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="report.html">Report E-Waste</a></li>
+        <li><a href="collections-points.html">Collection Points</a></li>
+        <li><a href="awareness.html">Awareness</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="FAQs.html">FAQs</a></li>
+      </ul>
+      <button class="menu-toggle">☰</button>
+    </nav>
+  </header>
+
+   <h2>E-Waste FAQs</h2>
+  <div class="faq-container" id="faq-container"></div>
+
+
+
+  <footer>
+    <p>&copy; 2026 E-Waste Uganda</p>
+  </footer>
+
+  <script>
+const menuToggle = document.querySelector('.menu-toggle');
+const navList = document.querySelector('header nav ul');
+
+menuToggle.addEventListener('click', () => {
+  navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
+});
+
+const faqContainer = document.getElementById('faq-container');
+
+const faqs = [
+  {
+    question: 'What is e-waste?',
+    answer: 'E-waste refers to discarded electrical or electronic devices, such as computers, phones, TVs, and other electronic items.'
+  },
+  {
+    question: 'Why is e-waste management important?',
+    answer: 'Improper e-waste disposal can lead to environmental pollution, health risks, and waste of valuable resources. Recycling e-waste helps recover materials like metals, reduces greenhouse gas emissions, and prevents pollution.'
+  },
+  {
+    question: 'What are the types of e-waste?',
+    answer: 'E-waste includes temperature exchange equipment, screens, lamps, large equipment, small equipment, and small IT and telecommunication equipment.'
+  },
+  {
+    question: 'How can individuals contribute to e-waste management?',
+    answer: 'You can reduce e-waste by repairing devices, donating or selling old electronics, and recycling e-waste responsibly.'
+  },
+  {
+    question: 'What are the challenges in e-waste management?',
+    answer: 'Challenges include lack of infrastructure, improper sorting, toxic material handling, and inadequate regulations.'
+  }
+];
+
+faqs.forEach((faq, index) => {
+  const faqItem = document.createElement('div');
+  faqItem.className = 'faq-item';
+
+  const faqQuestion = document.createElement('div');
+  faqQuestion.className = 'faq-question';
+  faqQuestion.textContent = faq.question;
+
+  const faqAnswer = document.createElement('div');
+  faqAnswer.className = 'faq-answer';
+  faqAnswer.textContent = faq.answer;
+
+  faqItem.appendChild(faqQuestion);
+  faqItem.appendChild(faqAnswer);
+
+  faqContainer.appendChild(faqItem);
+
+  faqQuestion.addEventListener('click', () => {
+    faqQuestion.classList.toggle('active');
+    faqAnswer.style.display = faqAnswer.style.display === 'block' ? 'none' : 'block';
+  });
+});
+
+  </script>
+  </body>
+  </html>

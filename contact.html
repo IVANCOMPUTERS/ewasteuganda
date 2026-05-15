@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - E-Waste Uganda</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>E-Waste Uganda</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="report.html">Report E-Waste</a></li>
+        <li><a href="collections-points.html">Collection Points</a></li>
+        <li><a href="awareness.html">Awareness</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="FAQs.html">FAQs</a></li>
+      </ul>
+      <button class="menu-toggle">☰</button>
+    </nav>
+  </header>
+  <div class="container">
+    <div class="left-side">
+      <h2>Send a Message</h2><br><br>
+      <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+    <div class="right-side">
+      <h2>Messages</h2>
+      <div id="messages"></div>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2026 E-Waste Uganda</p>
+  </footer>
+  <script>
+  const menuToggle = document.querySelector('.menu-toggle');
+const navList = document.querySelector('header nav ul');
+
+menuToggle.addEventListener('click', () => {
+  navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
+});
+
+    /* Contact */
+const contactForm = document.getElementById('contact-form');
+const messages = document.getElementById('messages');
+
+contactForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+
+  let msgList = JSON.parse(localStorage.getItem('messages')) || [];
+  msgList.push({ name, email, message });
+  localStorage.setItem('messages', JSON.stringify(msgList));
+
+  displayMessages();
+  contactForm.reset();
+});
+
+function displayMessages() {
+  messages.innerHTML = '';
+  let msgList = JSON.parse(localStorage.getItem('messages')) || [];
+  msgList.forEach((msg, index) => {
+    const item = document.createElement('div');
+    item.className = 'message-item';
+    item.innerHTML = `
+      <div class="msg">
+      Message from ${msg.name} <br> ${msg.email}
+      </div>
+      <div class="details">
+        ${msg.message}
+      </div>
+    `;
+    item.addEventListener('click', () => {
+      item.classList.toggle('clicked');
+      const details = item.querySelector('.details');
+      details.style.display = details.style.display === 'block' ? 'none' : 'block';
+    });
+    messages.appendChild(item);
+  });
+}
+displayMessages();
+
+  </script>
+</body>
+</html>
+
