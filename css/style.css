@@ -536,8 +536,7 @@ button:hover {
     align-items: center;
 }
   .faq-container {
-    margin: 6px;
-    font-size: 18px;
+    margin-bottom: 10em;
   }
 }
 
@@ -550,6 +549,9 @@ button:hover {
   .sections {
     margin: 15px 15px 40em 15px;
   }
+  .faq-container {
+    margin-bottom: 10em;
+  }
 }
 
 @media (max-width: 500px) {
@@ -560,9 +562,12 @@ button:hover {
     font-size: 14px;
   }
   .awareness {
-    margin: 15px;
+    margin: 12px;
   }
   .awareness .img {
     width: 100%;
+  }
+  .faq-container {
+    margin-bottom: 10em;
   }
 }
