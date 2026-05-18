@@ -550,15 +550,15 @@ button:hover {
 
 @media (max-width: 500px) {
   .sections {
-    margin: 15px 15px 40em 15px;
+    margin: 15px 15px 50em 15px;
   }
   footer {
-    font-size: 12px;
+    font-size: 14px;
   }
   .awareness {
-    margin: 30px;
+    margin: 15px;
   }
   .awareness .img {
-    width: 90%;
+    width: 100%;
   }
 }
