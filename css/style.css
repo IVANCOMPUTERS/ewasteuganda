@@ -62,16 +62,16 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #333;
+    background-color: #ecfc0c;
     padding: 6px;
-    color: white;
+    color: black;
     text-align: center;
 }
 .sections {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 15px;
+  margin: 15px 15px 5em 15px;
   height: 33vh;
 }
 .impact, .objectives, .use, .purposes {
@@ -111,6 +111,7 @@ footer {
   justify-content: center;
   padding: 1rem;
   margin-top: -20px;
+  margin-bottom: 5em;
 }
 
 .left-side {
@@ -220,6 +221,7 @@ button:hover {
   justify-content: center;
   gap: 2rem;
   padding: 2rem;
+  margin-bottom: 5em;
   }
 
 .left-side {
@@ -347,6 +349,7 @@ button:hover {
   padding: 1rem;
   max-width: 800px;
   margin: auto;
+  margin-bottom: 5em;
 }
 
 .awareness h1, .awareness h2 {
@@ -389,6 +392,14 @@ button:hover {
 
 .collection-points li {
   margin-bottom: 0.5rem;
+}
+.btn-1 {
+  background-color: green;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  text-decoration: none;
 }
 
 /* Contact */
@@ -515,6 +526,14 @@ button:hover {
   #img-1 {
     display: none;
   }
+  .sections {
+    margin: 15px 15px 30em 15px;
+  }
+  .awareness {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 600px) {
@@ -522,5 +541,8 @@ button:hover {
     flex-basis: 100%;
     max-width: 100%;
     margin: 20px;
+  }
+  . sections {
+    margin: 15px 15px 30em 15px;
   }
 }
