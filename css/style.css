@@ -527,7 +527,7 @@ button:hover {
     display: none;
   }
   .sections {
-    margin: 15px 15px 30em 15px;
+    margin: 15px 15px 50em 15px;
   }
   .awareness {
     display: flex;
@@ -544,6 +544,6 @@ button:hover {
     margin: 20px;
   }
   .sections {
-    margin: 15px 15px 30em 15px;
+    margin: 15px 15px 50em 15px;
   }
 }
