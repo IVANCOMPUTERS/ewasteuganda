@@ -492,7 +492,7 @@ button:hover {
 
 .faq-question::after {
   content: 'View'; /* down arrow */
-  font-size: 1.2rem;
+  font-size: 14px;
   transition: transform 0.3s;
 }
 
@@ -551,7 +551,7 @@ button:hover {
   }
   .faq-container {
     margin-bottom: 10em;
-    font-size: 10px;
+    font-size: 14px;
   }
 }
 
@@ -570,6 +570,6 @@ button:hover {
   }
   .faq-container {
     margin-bottom: 10em;
-    font-size: 10px;
+    font-size: 14px;
   }
 }
