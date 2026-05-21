@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You - E-Waste Uganda</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>E-Waste Uganda</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="report.html">Report E-Waste</a></li>
+        <li><a href="collections-points.html">Collection Points</a></li>
+        <li><a href="awareness.html">Awareness</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="FAQs.html">FAQs</a></li>
+      </ul>
+      <button class="menu-toggle">☰</button>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="left-side" style="text-align: center; padding: 60px 20px;">
+      <h2>Thank You!</h2>
+      <p style="font-size: 18px; margin: 20px 0;">
+        Your submission has been received. We’ll review it and get back to you soon.
+      </p>
+      <a href="index.html" class="btn" style="display: inline-block; padding: 12px 24px; background: #2e7d32; color: white; text-decoration: none; border-radius: 6px; margin-top: 20px;">
+        Back to Home
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <h3>&copy; 2026 E-Waste Uganda</h3>
+    <p>Built by SAVIOUR IVAN (IVAN COMPUTERS)</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navList = document.querySelector('header nav ul');
+    menuToggle.addEventListener('click', () => {
+      navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>
