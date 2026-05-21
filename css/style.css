@@ -553,6 +553,9 @@ button:hover {
     margin-bottom: 10em;
     font-size: 16px;
   }
+  footer {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -560,7 +563,7 @@ button:hover {
     margin: 15px 15px 50em 15px;
   }
   footer {
-    font-size: 16px;
+    font-size: 14px;
   }
   .awareness {
     margin: 12px;
