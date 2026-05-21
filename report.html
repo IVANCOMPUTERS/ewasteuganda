@@ -22,41 +22,54 @@
       <button class="menu-toggle">☰</button>
     </nav>
   </header>
-      <div class="container">
+
+  <div class="container">
     <div class="left-side">
       <h2>Report E-Waste</h2>
-      <form id="report-form">
-        <p>Fill in the form below to report e-waste for collection:</p>
-        <label for="name">Name:</label>
-        <input type="text" id="name" required>
+      
+      <form action="https://formsubmit.co/saviourivan2024@gmail.com" method="POST" id="report-form">
+        
+        <!-- Hidden fields for organized data -->
+        <input type="hidden" name="_subject" value="New E-Waste Report - E-Waste Uganda">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none">
+        
+        <!-- Optional: redirect after submit -->
+        <!-- <input type="hidden" name="_next" value="https://yoursite.github.io/thanks.html"> -->
 
-        <label for="name">Telephone Number:</label>
-        <input type="tel" inputmode="numeric" id="phone" min="0" maxlength="10" required>
+        <p>Fill in the form below to report e-waste for collection:</p>
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="Name" required>
+
+        <label for="phone">Telephone Number:</label>
+        <input type="tel" inputmode="numeric" id="phone" name="Telephone" min="0" maxlength="10" required>
         
         <label for="location">Location:</label>
-        <input type="text" id="location" required>
+        <input type="text" id="location" name="Location" required>
 
         <label for="type">E-Waste Type:</label>
-        <input type="text" id="type" required>
+        <input type="text" id="type" name="E-Waste Type" required>
 
         <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" required min="0">
+        <input type="number" id="quantity" name="Quantity" required min="0">
 
         <button type="submit">Submit</button>
       </form>
     </div>
+
     <div class="right-side">
       <h2>Reported E-Waste</h2>
       <div id="reported-data"></div>
     </div>
   </div>
+
   <footer>
     <h3>&copy; 2026 E-Waste Uganda</h3>
     <p>Built by SAVIOUR IVAN (IVAN COMPUTERS)</p>
-
   </footer>
+  
   <script src="js/script.js"></script>
 </body>
 </html>
-
-
