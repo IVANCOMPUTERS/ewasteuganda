@@ -22,83 +22,54 @@
       <button class="menu-toggle">☰</button>
     </nav>
   </header>
+
   <div class="container">
     <div class="left-side">
       <h2>Send a Message</h2><br><br>
-      <form id="contact-form">
+      
+      <form action="https://formsubmit.co/saviourivan2024@gmail.com" method="POST" id="contact-form">
+        
+        <!-- FormSubmit settings for organized data -->
+        <input type="hidden" name="_subject" value="New Contact Message - E-Waste Uganda">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none">
+        
+        <!-- Optional: redirect to thank you page -->
+        <!-- <input type="hidden" name="_next" value="https://yoursite.github.io/thanks.html"> -->
+
         <label for="name">Name:</label>
-        <input type="text" id="name" required>
+        <input type="text" id="name" name="Name" required>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" required>
+        <input type="email" id="email" name="Email" required>
 
         <label for="message">Message:</label>
-        <textarea id="message" required></textarea>
+        <textarea id="message" name="Message" required></textarea>
 
         <button type="submit">Send Message</button>
       </form>
     </div>
+
     <div class="right-side">
       <h2>Messages</h2>
       <div id="messages"></div>
     </div>
   </div>
+
   <footer>
    <h3>&copy; 2026 E-Waste Uganda</h3>
     <p>Built by SAVIOUR IVAN (IVAN COMPUTERS)</p>
-
   </footer>
+
   <script>
-  const menuToggle = document.querySelector('.menu-toggle');
-const navList = document.querySelector('header nav ul');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navList = document.querySelector('header nav ul');
 
-menuToggle.addEventListener('click', () => {
-  navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
-});
-
-    /* Contact */
-const contactForm = document.getElementById('contact-form');
-const messages = document.getElementById('messages');
-
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const message = document.getElementById('message').value;
-
-  let msgList = JSON.parse(localStorage.getItem('messages')) || [];
-  msgList.push({ name, email, message });
-  localStorage.setItem('messages', JSON.stringify(msgList));
-
-  displayMessages();
-  contactForm.reset();
-});
-
-function displayMessages() {
-  messages.innerHTML = '';
-  let msgList = JSON.parse(localStorage.getItem('messages')) || [];
-  msgList.forEach((msg, index) => {
-    const item = document.createElement('div');
-    item.className = 'message-item';
-    item.innerHTML = `
-      <div class="msg">
-      Message from ${msg.name} <br> ${msg.email}
-      </div>
-      <div class="details">
-        ${msg.message}
-      </div>
-    `;
-    item.addEventListener('click', () => {
-      item.classList.toggle('clicked');
-      const details = item.querySelector('.details');
-      details.style.display = details.style.display === 'block' ? 'none' : 'block';
+    menuToggle.addEventListener('click', () => {
+      navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
     });
-    messages.appendChild(item);
-  });
-}
-displayMessages();
 
   </script>
 </body>
 </html>
-
